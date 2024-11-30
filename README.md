@@ -40,18 +40,6 @@
     * This method should lead to `create-site-1` container installing frappe, ERP Next and HRMS modules successfully, exiting with code 0
     * Finally run `restore_erpnext_backup.sh` to restore data (take care that backup should have same modules as installed system,eg: ERP next and HRMS)
 
-## Useful Links:
-1. [The Missing Frappe Manual](https://manual.buildwithhussain.dev/)
-2. [Hosting ERP Next on Synology NAS](https://mariushosting.com/how-to-install-erpnext-on-your-synology-nas/)
-3. [ERP next Easy Install Python Script](https://github.com/frappe/bench#easy-install-script)
-4. [Docker Quick Install Bash Script](https://get.docker.com/)
-5. [Removing all Docker containers, images and volumes for fresh install](https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes)
-6. [Docker save and load VS Docker import and export](https://www.baeldung.com/ops/docker-save-export)
-7. [Frappe Docker FAQ Custom App installation](https://github.com/frappe/frappe_docker/wiki/Frequently-Asked-Questions#how-to-install-official-or-custom-apps)
-8. [Frappe Docker Container Basics](https://discuss.frappe.io/t/container-basics/99306)
-9. [Frappe Docker example Container Builds](https://discuss.frappe.io/t/container-builds/99916)
-
-
 ## TODO:
 1. Remove `get-app` commands from all yml/yaml files as it is not supposed to used with running containers, custom images already handle this
 2. Make script for `install-app` and/or `create-site` for custom apps aside from ERPNext AFTER `db` starts and `create-site` or `configurator` exits (explained [here](https://github.com/frappe/frappe_docker/blob/main/docs/site-operations.md)). This is to ensure this command is performed in running containers. This also ensures that apps are added dynamically and restoring backups does not override them. (We will be running app restore scripts with backup restore so that user gets latest data as well as new apps). Ensure that following requirements are satisfied:
