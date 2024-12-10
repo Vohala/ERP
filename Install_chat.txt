@@ -1,0 +1,10 @@
+ls /home/frappe/frappe-bench/apps
+cd /home/frappe/frappe-bench/apps
+git clone https://github.com/frappe/chat.git
+bench get-app chat
+bench --site frontend install-app chat
+bench build --app chat
+bench --site frontend migrate
+
+
+sudo docker compose -f pwd.yml restart
